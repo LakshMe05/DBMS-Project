@@ -107,4 +107,9 @@ document.getElementById('search-input').addEventListener('keydown', function(eve
     }
 });
 
+
+document.getElementById('flipButton').addEventListener('click', function() {
+    document.querySelector('.book').classList.toggle('flipped');
+  });
+
 displayBooks();  // Initially display all books
