@@ -1,6 +1,7 @@
 /* styles.css */
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -9,139 +10,160 @@ body {
 header {
     background-color: #333;
     color: #fff;
-    padding: 10px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.logo {
+    font-size: 1.5em;
 }
 
 nav a {
     color: #fff;
-    margin: 0 10px;
+    margin: 0 15px;
     text-decoration: none;
+    font-size: 1em;
 }
 
-h1, h2 {
+h1,h2 {
     color: #333;
+    text-align: center;
 }
 
 main {
     margin: 20px;
 }
 
-#book-list, #cart-items {
+#booklist,
+#cart {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: space-between;
 }
 
-.book, .cart-item {
+.bookitem {
     background-color: #fff;
     border: 1px solid #ccc;
-    padding: 20px;
-    width: 200px;
-    text-align: center;
+    padding: 15px;
+    width: calc(33.333% - 20px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition for smooth effects */
 }
+
+.bookitem:hover {
+    transform: scale(1.05); /* Slightly scales the item */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Deepens shadow on hover */
+}
+
 
 button {
     background-color: #28a745;
     color: #fff;
     padding: 10px 20px;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.2s;
 }
 
 button:hover {
     background-color: #218838;
 }
 
-/* Search bar styling */
-#search-bar {
+#checkout {
+    padding: 15px;
     margin: 20px 0;
-    text-align: center;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#search-input {
+#searchbar {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#searchinput {
     padding: 10px;
     width: 300px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-#search-button {
+#searchbutton {
     padding: 10px 20px;
     background-color: #007bff;
     color: #fff;
     border: none;
-    cursor: pointer;
     border-radius: 5px;
-    margin-left: 10px;
+    cursor: pointer;
 }
 
-#search-button:hover {
+#searchbutton:hover {
     background-color: #0056b3;
 }
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background: #f5f5f5;
-    font-family: Arial, sans-serif;
-  }
-  
-  .book {
-    width: 300px;
-    height: 400px;
-    position: relative;
-    perspective: 1000px;
-  }
-  
-  .page {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: #f0f0f0;
-    border: 1px solid #ccc;
-    overflow: hidden;
-    transform-origin: left;
-    transition: transform 0.6s ease;
-  }
-  
-  .page-left {
-    z-index: 2;
-    transform-origin: left;
-    background-color: #ffe4b5;
-  }
-  
-  .page-right {
-    z-index: 1;
-    transform-origin: right;
-    background-color: #add8e6;
-  }
-  
-  .page-content {
-    padding: 20px;
-    text-align: center;
-    font-size: 24px;
-  }
-  
-  .flipped .page-left {
-    transform: rotateY(-180deg);
-  }
-  
-  .flipped .page-right {
-    transform: rotateY(0deg);
-  }
-  
-  button {
-    margin-top: 20px;
+
+#authbutton {
     padding: 10px 20px;
+    background-color: #f44336; /* Red color */
+    color: white;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-  }
+    font-size: 16px;
+}
+
+#authbutton:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #booklist,
+    #cart {
+        flex-direction: column;
+    }
+
+    .bookitem {
+        width: 100%;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        margin: 10px 0;
+    }
+
+    #searchbar {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #searchinput {
+        width: 100%;
+    }
+
+    #authbutton {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    nav a {
+        font-size: 0.9em;
+    }
+}
