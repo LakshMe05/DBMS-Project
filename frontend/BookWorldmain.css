@@ -1,86 +1,117 @@
-/* styles.css */
-
+/* Font and general color scheme */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Georgia', serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    color: #d1c7b7;
+    background-color: #1f1d1b;
 }
 
-header {
-    background-color: #333;
-    color: #fff;
+.header {
+    background-color: #2e2b29;
+    color: #d1c7b7;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
+    padding: 20px;
 }
 
-.logo {
-    font-size: 1.5em;
-}
-
-nav a {
-    color: #fff;
+.header nav a {
+    color: #d1c7b7;
     margin: 0 15px;
     text-decoration: none;
     font-size: 1em;
 }
 
-h1,h2 {
-    color: #333;
+.hero {
+    background-image: url('vintageLibrary.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #d1c7b7;
     text-align: center;
+    padding: 80px 20px;
 }
 
-main {
-    margin: 20px;
+.hero h1 {
+    font-size: 3em;
+    margin: 0;
 }
 
-#booklist,
-#cart {
+.hero p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.section {
+    padding: 40px 20px;
+    background-color: rgba(30, 30, 30, 0.9);
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.books {
+    background-image: url('bookShelf.jpg');
+    background-size: cover;
+}
+
+.cart, .user-details {
+    background-color:#4e3b31 ;
+    border: 10px solid ;
+    background-size: cover;
+}
+
+.booklist,
+.cart div,
+.user-details div {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .bookitem {
-    background-color: #fff;
-    border: 1px solid #ccc;
+    background-color: #2e2b29;
+    color: #d1c7b7;
+    border: 1px solid #7b7363;
     padding: 15px;
-    width: calc(33.333% - 20px);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition for smooth effects */
+    width: calc(30% - 20px);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .bookitem:hover {
-    transform: scale(1.05); /* Slightly scales the item */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Deepens shadow on hover */
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-
 button {
-    background-color: #28a745;
-    color: #fff;
+    background-color: #4e3b31;
+    color: #d1c7b7;
     padding: 10px 20px;
-    border: none;
+    border: 1px solid #7b7363;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.2s;
+    font-size: 1em;
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #3b322a;
 }
 
-#checkout {
-    padding: 15px;
-    margin: 20px 0;
-    width: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.login-btn {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+#checkout,
+#authbutton,
+#fetchButton {
+    margin-top: 20px;
+    display: block;
+    width: fit-content;
 }
 
 #searchbar {
@@ -92,78 +123,40 @@ button:hover {
 
 #searchinput {
     padding: 10px;
-    width: 300px;
-    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #7b7363;
+    background-color: #fff;
+    color: #d1c7b7;
     border-radius: 5px;
 }
 
 #searchbutton {
     padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
+    background-color: #4e3b31;
+    color: #d1c7b7;
+    border: 1px solid #7b7363;
     border-radius: 5px;
-    cursor: pointer;
 }
 
-#searchbutton:hover {
-    background-color: #0056b3;
+.footer {
+    background-color: #2e2b29;
+    color: #d1c7b7;
+    text-align: center;
+    padding: 20px;
 }
 
-#authbutton {
-    padding: 10px 20px;
-    background-color: #f44336; /* Red color */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-#authbutton:hover {
-    background-color: #d32f2f; /* Darker red on hover */
-}
-
-/* Responsive Styles */
 @media (max-width: 768px) {
-    #booklist,
-    #cart {
-        flex-direction: column;
-    }
-
     .bookitem {
-        width: 100%;
-    }
-
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    nav {
-        margin: 10px 0;
-    }
-
-    #searchbar {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    #searchinput {
-        width: 100%;
-    }
-
-    #authbutton {
-        width: 100%;
+        width: calc(50% - 20px);
     }
 }
 
 @media (max-width: 480px) {
-    h1 {
+    .header, .hero h1 {
         font-size: 1.5em;
     }
-
-    nav a {
-        font-size: 0.9em;
+    .bookitem {
+        width: 100%;
     }
 }
