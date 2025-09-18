@@ -1,0 +1,21 @@
+---
+deployment:
+  tasks:
+    # Step 1: Tell cPanel where the website should go
+    - export DEPLOYPATH=/home1/bextosu/public_html/DBMS_Project
+
+    # Step 2: Go to backend folder and install packages
+    - cd backend
+    - npm install
+
+    # Step 3: Go to frontend folder, install packages, and build the site
+    - cd ../frontend
+    - npm install
+    - npm run build
+
+    # Step 4: Copy built frontend files to the website folder
+    - /bin/cp -R dist/* $DEPLOYPATH
+
+    # Step 5: Restart the backend app (for dynamic site)
+    - cd ../backend
+    - touch tmp/restart.txt
