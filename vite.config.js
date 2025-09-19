@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   root: 'frontend',
+  base: './',
   server: {
     port: 3000,
     proxy: {
@@ -12,6 +13,7 @@ export default defineConfig({
     }
   },
   build: {
-    outDir: '../dist'
+    outDir: '../dist',
+    emptyOutDir: true
   }
 })
